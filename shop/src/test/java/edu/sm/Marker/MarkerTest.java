@@ -19,7 +19,7 @@ public class MarkerTest {
     void contextLoads() {
         try{
             List<Marker> list = markerService.get();
-            list.forEach(System.out::println);
+            list.forEach((data)->{log.info(data.toString());});
 
             Marker marker = markerService.get(101);
             log.info(marker.toString());
