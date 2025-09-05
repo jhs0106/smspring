@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sm.app.repository.AnythingRepository">
+
+    <select id="findByAddress" parameterType="String" resultType="Anything">
+        SELECT * FROM anything WHERE address like CONCAT('%', #{addr}, '%')
+    </select>
+
+    <select id="findShopsWithinRadius" parameterType="edu.sm.app.dto.Anything" resultType="Anything">
+        SELECT *,
+               (6371 * ACOS(COS(RADIANS(#{lat})) * COS(RADIANS(lat)) * COS(RADIANS(lng) - RADIANS(#{lng})) + SIN(RADIANS(#{lat})) * SIN(RADIANS(lat)))) AS distance
+        FROM anything
+        HAVING distance &lt;= 3
+        ORDER BY distance
+            LIMIT 30;
+    </select>
+
+
+    <select id="select" parameterType="Integer" resultType="Anything">
+        SELECT * FROM anything WHERE loc_id=#{locId}
+    </select>
+
+
+    <!--나중에 수정-->
+    <select id="selectAll" resultType="Anything">
+        SELECT * FROM marker
+    </select>
+
+    <insert id="insert" parameterType="Anything">
+        INSERT INTO marker VALUES (#{target},#{title},#{img},#{lat},#{lng},#{loc})
+    </insert>
+
+    <update id="update" parameterType="Anything">
+        UPDATE marker SET title=#{title}, img=#{img}, lat=#{lat}, lng=#{lng}, loc=#{loc} WHERE target=#{target}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM cust WHERE target=#{target}
+    </delete>
+
+</mapper>

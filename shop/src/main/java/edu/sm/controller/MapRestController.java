@@ -7,19 +7,22 @@ import edu.sm.app.repository.MarkerRepository;
 import edu.sm.app.service.MarkerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.json.simple.JSONObject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @RestController
 @RequiredArgsConstructor
 @Slf4j
 public class MapRestController {
     final MarkerService markerService;
-
+    double lat;
+    double lng;
     @RequestMapping("/getcontents")
     public Object getcontents(@RequestParam("target") int target, @RequestParam("type") int type){
         log.info(target+" "+type);
@@ -85,6 +88,22 @@ public class MapRestController {
         //해당 주소로 데이터 베이스에서 정보를 조회한다.
         // List 담아서 리턴 한다.
         return "ok";
+    }
+    @RequestMapping("/iot")
+    public Object iot(@RequestParam("lat") double lat, @RequestParam("lng") double lng) throws Exception{
+        log.info(lat+" : "+lng);
+        this.lat = lat;
+        this.lng = lng;
+        return "ok";
+    }
+
+    @RequestMapping("/getlatlng")
+    public Object getlatlng() throws Exception {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("lat", this.lat);
+        jsonObject.put("lng", this.lng);
+        //{lat:xxxx, lng:xxxxx}
+        return jsonObject;
     }
 
     @RequestMapping("/getmarkers")

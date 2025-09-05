@@ -44,6 +44,7 @@
         navigator.geolocation.getCurrentPosition((position)=>{
           let lat = position.coords.latitude;  // 위도
           let lng = position.coords.longitude; // 경도
+          $('#latlng').html(lat+' '+lng);
           let locPosition = new kakao.maps.LatLng(lat, lng);
           this.goMap(locPosition);
         });
@@ -88,6 +89,7 @@
 
 <div class="col-sm-10">
   <h2>Map1</h2>
+  <h5 id="latlng"></h5>
   <h3 id="addr1"></h3>
   <h3 id="addr2"></h3>
   <button id="btn1" class="btn btn-primary">병원</button>

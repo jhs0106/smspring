@@ -12,12 +12,23 @@
         <module name="shop.test" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="iot" target="17" />
+      <module name="iot.main" target="17" />
+      <module name="iot.test" target="17" />
+      <module name="iot2" target="17" />
+      <module name="iot2.main" target="17" />
+      <module name="iot2.test" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="admin" options="-parameters" />
       <module name="admin.main" options="-parameters" />
       <module name="admin.test" options="-parameters" />
+      <module name="map" options="-parameters" />
+      <module name="map.main" options="-parameters" />
+      <module name="map.test" options="-parameters" />
       <module name="shop" options="-parameters" />
       <module name="shop.main" options="-parameters" />
       <module name="shop.test" options="-parameters" />
