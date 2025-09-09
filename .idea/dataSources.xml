@@ -1,11 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="shopdb@127.0.0.1" uuid="fc368cbd-5476-4a39-961c-e1a5cb0da30e">
+    <data-source source="LOCAL" name="shopdb@127.0.0.1 [2]" uuid="cd8fd23a-3ab8-4c7b-afe9-4b2ae1312cba">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
+      <remarks>$PROJECT_DIR$/shop/src/main/resources/application-pro.yml</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="shopdb@127.0.0.1 [2]" uuid="93618613-db54-412f-a7d8-25a3bfde54d4">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/shop/src/main/resources/application-pro.yml</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="shopdb@127.0.0.1" uuid="0be53780-b50e-41df-a472-8bddda6e5c73">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/map/src/main/resources/application-dev.yml</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="shopdb@127.0.0.1" uuid="3e782d12-cd04-4fb5-aca0-d54589c8d783">
+      <imported>true</imported>
       <remarks>$PROJECT_DIR$/shop/src/main/resources/application-dev.yml</remarks>
+      <jdbc-driver>net.sf.log4jdbc.sql.jdbcapi.DriverSpy</jdbc-driver>
+      <jdbc-url>jdbc:log4jdbc:mysql://127.0.0.1:3306/shopdb?characterEncoding=utf8</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="shopdb@127.0.0.1" uuid="dba3492c-e4ba-4435-b546-ce003d2b4aa1">
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/shop/src/main/resources/application-dev.yml</remarks>
+      <jdbc-driver>net.sf.log4jdbc.sql.jdbcapi.DriverSpy</jdbc-driver>
+      <jdbc-url>jdbc:log4jdbc:mysql://127.0.0.1:3306/shopdb?characterEncoding=utf8</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="shopdb@127.0.0.1" uuid="563906a1-6be1-4664-ad5e-ec8b4261dff2">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/map/src/main/resources/application-dev.yml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul</jdbc-url>
       <jdbc-additional-properties>
@@ -13,15 +54,6 @@
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
         <property name="com.intellij.clouds.kubernetes.db.container.port" />
       </jdbc-additional-properties>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="shopdb@127.0.0.1" uuid="fcb3047d-636b-499e-b976-e693a41bf8ec">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>$PROJECT_DIR$/shop/src/main/resources/application-dev.yml</remarks>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

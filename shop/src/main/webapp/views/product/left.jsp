@@ -4,13 +4,13 @@
   <p>Left Menu</p>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value ="/cust/add"/>">add</a>
+      <a class="nav-link" href="<c:url value ="/product/add"/>">add</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value ="/cust/get"/>">get</a>
+      <a class="nav-link" href="<c:url value ="/product/get"/>">get</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value ="/cust/getpage"/>">getPage</a>
+      <a class="nav-link" href="<c:url value ="/product/getpage"/>">getpage</a>
     </li>
   </ul>
   <hr class="d-sm-none">

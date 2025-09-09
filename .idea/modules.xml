@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/iot2/iot2.iml" filepath="$PROJECT_DIR$/iot2/iot2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/map.main.iml" filepath="$PROJECT_DIR$/.idea/modules/map.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/map.test.iml" filepath="$PROJECT_DIR$/.idea/modules/map.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/shop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/shop.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/shop.test.iml" filepath="$PROJECT_DIR$/.idea/modules/shop.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/smspring.iml" filepath="$PROJECT_DIR$/smspring.iml" />

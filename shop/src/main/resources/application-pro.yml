@@ -1,3 +1,8 @@
+# springboot 내장 서버 환경 설정
+# bootwar 실행 시에만 적용이 됨.
+# war tomcat 실행 할 때는 적용 X
+
+
 server:
   port: 8443
   ssl:
@@ -10,17 +15,12 @@ server:
       charset: UTF-8
       force: true
 spring:
-  config:
-    import: optional:file:.env[.properties] #.env import
   mvc:
     view:
       prefix: /views/
       suffix: .jsp
   datasource:
-
-    #url: jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul
-    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/shopdb?characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul
     username: smuser
     password: ENC(AZD/oOYNtCPlDC68dabOeA==)
 mybatis:
@@ -30,13 +30,9 @@ mybatis:
     map-underscore-to-camel-case: true
 logging:
   level:
-    root: info
+    root: error
 
 # Application Config
 app:
-  dir:
-    imgsdir: file:///C:/smspring/imgs/     # 화면 출력 용
-    uploadimgsdir: C:/smspring/imgs/    # 파일 Write 용
   key:
     skey: ${MY_KEY}
-    algo: PBEWithMD5AndDES
