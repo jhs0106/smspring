@@ -2,6 +2,7 @@ package edu.sm.controller;
 
 import com.github.pagehelper.PageInfo;
 import edu.sm.app.dto.Cust;
+import edu.sm.app.dto.CustSearch;
 import edu.sm.app.service.CustService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -56,6 +57,18 @@ public class CustController {
         return "index";
     }
 
+    @RequestMapping("/search")
+    public String get(Model model, CustSearch custSearch) throws Exception {
+        List<Cust> list = null;
+        list = custService.searchCustList(custSearch);
+
+        model.addAttribute("clist", list);
+        model.addAttribute("left", dir+"left");
+        model.addAttribute("center", dir+"get");
+        return "index";
+    }
+
+
     @RequestMapping("/getpage")
     public String getpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
         PageInfo<Cust> p = null;
@@ -70,6 +83,8 @@ public class CustController {
         model.addAttribute("center",dir+"getpage");
         return "index";
     }
+
+
 
 
 

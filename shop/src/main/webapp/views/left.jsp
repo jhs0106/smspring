@@ -4,10 +4,10 @@
   <p>Left Menu</p>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value ="map/map1"/>">Link</a>
+      <a class="nav-link" href="<c:url value ="/audio"/>">Audio</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<c:url value ="map/map2"/>">Link</a>
+      <a class="nav-link" href="<c:url value ="/pic"/>">Pic</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#<c:url value ="map/map3"/>">Link</a>

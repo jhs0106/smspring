@@ -37,15 +37,16 @@ public class ProductController {
     @RequestMapping("/delete")
     public String delete(Model model, @RequestParam("id") int id) throws Exception {
         productService.remove(id);
-        return "/product/get";
+        return "redirect:/product/get";
     }
     @RequestMapping("/detail")
     public String detail(Model model, @RequestParam("id") int id) throws Exception {
         Product product = null;
         product = productService.get(id);
-        model.addAttribute("p", product);
+        model.addAttribute("product", product);
         model.addAttribute("left", dir+"left");
         model.addAttribute("center", dir+"detail");
+        log.info(product.getProductId()+","+product.getProductName());
         return "index";
     }
     @RequestMapping("/registerimpl")
@@ -85,4 +86,14 @@ public class ProductController {
         return "index";
 
     }
+
+
+    @RequestMapping("/update")
+    public String update(Model model, Product product) throws Exception {
+        productService.modify(product);
+        return "redirect:/product/detail?id="+product.getProductId();
+    }
+
+
+
 }

@@ -2,7 +2,6 @@ package edu.sm.app.service;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import edu.sm.app.dto.Cust;
 import edu.sm.app.dto.Product;
 import edu.sm.app.repository.ProductRepository;
 import edu.sm.common.frame.SmService;
@@ -12,6 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -32,7 +32,7 @@ public class ProductService implements SmService<Product, Integer> {
 
     @Override
     public void modify(Product product) throws Exception {
-        // 기존 이미지 사용
+        // 새로운 이미지가 있는지 검사
         if(product.getProductImgFile().isEmpty()){
             productRepository.update(product);
         }
@@ -48,6 +48,10 @@ public class ProductService implements SmService<Product, Integer> {
 
     @Override
     public void remove(Integer s) throws Exception {
+        Product product = this.get(s);
+        if (product != null && product.getProductImg() != null && !product.getProductImg().isEmpty()) {
+            FileUploadUtil.deleteFile(product.getProductImg(), imgDir);
+        }
         productRepository.delete(s);
     }
 
