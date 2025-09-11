@@ -1,6 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<style>
+    #product_img{
+        width: 250px;
+        height: 250px;
+    }
+
+</style>
 
 <script>
     let productDetail = {
@@ -33,7 +40,7 @@
 <div class="col-sm-9">
     <h2>Product Detail Page</h2>
     <form id="product_update_form">
-        <img src="<c:url value ="/imgs/${product.productImg}"/>">
+        <img id="product_img" src="<c:url value ="/imgs/${product.productImg}"/>">
         <div class="form-group">
             <label for="id">Id:</label>
             <p id="id">${product.productId}</p>
