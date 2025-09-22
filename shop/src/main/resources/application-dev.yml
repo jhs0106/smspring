@@ -35,14 +35,17 @@ mybatis:
     map-underscore-to-camel-case: true
 logging:
   level:
-    root: error
+    root: info
 
 # Application Config
 app:
   dir:
     imgsdir: file:///C:/smspring/imgs/     # 화면 출력 용
     uploadimgsdir: C:/smspring/imgs/    # 파일 Write 용
-    logsdir: file:///C:/smspring/logs/
+    logsdir: file:///C:/smspring/logs/ # 화면 출력 용
+    logsdirRead: C:/smspring/logs/ # 파일 read 용
   key:
     skey: ${MY_KEY}
     algo: PBEWithMD5AndDES
+    wkey: ENC(evsfPrEiJ45nUKua0R7AjToO+/RLBdcUCShieLqZLpRRuKTZhu/o3sZ8x3tGs2izrvoGkvoBljLbl0A2WcNkbyRsbsnXDfeqCAwseLtlL8uSYF2llI6PcvwdxN9vnAuYb61HVgqQqMwo7gov+p6Saw==)
+    owkey: ENC(Hqy18emm0HAhx2OYyRcaoiehCaJx8oWnYs+pPBHfstnCoabYSHlqWc5KOYkbuT6+)

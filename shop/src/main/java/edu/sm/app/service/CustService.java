@@ -47,6 +47,11 @@ public class CustService implements SmService<Cust, String> {
         return custRepository.getpage();
     }
 
+    public Page<Cust> getPageSearch(int pageNo,  CustSearch custSearch) throws Exception {
+        PageHelper.startPage(pageNo, 3); // 3: 한화면에 출력되는 개수
+        return custRepository.getpageSearch(custSearch);
+    }
+
     public List<Cust> searchCustList(CustSearch custSearch) throws Exception {
         return custRepository.searchCustList(custSearch);
     }

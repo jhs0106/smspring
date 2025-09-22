@@ -72,21 +72,39 @@ public class CustController {
     }
 
 
-    @RequestMapping("/getpage")
-    public String getpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
+
+// 단순한 페이지네이션 연습이기에 지움
+//    @RequestMapping("/getpage")
+//    public String getpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
+//        PageInfo<Cust> p = null;
+//        try {
+//            p = new PageInfo<>(custService.getPage(pageNo), 5); // 5:하단 네비게이션 개수
+//        } catch (Exception e) {
+//            throw new Exception("시스템 장애: ER0001");
+//        }
+//        model.addAttribute("target", "/cust");
+//        model.addAttribute("clist",p);
+//        model.addAttribute("left",dir+"left");
+//        model.addAttribute("center",dir+"getpage");
+//        return "index";
+//    }
+
+    @RequestMapping("/searchpage")
+    public String searchpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model,
+                             CustSearch custSearch) throws Exception {
         PageInfo<Cust> p = null;
-        try {
-            p = new PageInfo<>(custService.getPage(pageNo), 5); // 5:하단 네비게이션 개수
-        } catch (Exception e) {
-            throw new Exception("시스템 장애: ER0001");
-        }
+        p = new PageInfo<>(custService.getPageSearch(pageNo, custSearch), 5); // 5:하단 네비게이션 개수
+
+        model.addAttribute("custName", custSearch.getCustName());
+        model.addAttribute("startDate", custSearch.getStartDate());
+        model.addAttribute("endDate", custSearch.getEndDate());
+
         model.addAttribute("target", "/cust");
-        model.addAttribute("clist",p);
+        model.addAttribute("cpage",p);
         model.addAttribute("left",dir+"left");
         model.addAttribute("center",dir+"getpage");
         return "index";
     }
-
 
 
 

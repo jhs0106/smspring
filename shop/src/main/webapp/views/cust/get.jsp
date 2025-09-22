@@ -10,12 +10,13 @@
 
 <div class="col-sm-10">
   <h2>Cust Get Page</h2>
+
   <form action="/cust/search" method="get"  id="search_form" class="form-inline well" >
     <div class="form-group">
       <label for="id">Name:</label>
       <input type="text" name="custName" class="form-control" id="id"
       <c:if test="${custName != null}">
-              value="${custName}"
+             value="${custName}"
       </c:if>
       >
     </div>
@@ -23,7 +24,7 @@
       <label for="sdate">Star:</label>
       <input type="date" name="startDate" class="form-control" id="sdate"
       <c:if test="${startDate != null}">
-            value="${startDate}"
+             value="${startDate}"
       </c:if>
       >
     </div>
@@ -31,7 +32,7 @@
       <label for="edate">End:</label>
       <input type="date" name="endDate" class="form-control" id="edate"
       <c:if test="${endDate != null}">
-              value="${endDate}"
+             value="${endDate}"
       </c:if>
       >
     </div>
@@ -39,7 +40,6 @@
       <button type="submit" class="btn btn-info">Search</button>
     </div>
   </form>
-
 
   <table class="table table-bordered">
     <thead>

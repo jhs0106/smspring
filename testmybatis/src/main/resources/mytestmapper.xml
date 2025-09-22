@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sm.app.repository.MyTestRepository">
+    <select id="findMyTest" resultType="MyTest">
+        SELECT
+        product_id AS id,
+        product_name AS title,
+        product_price AS content,
+        cate_id AS writer
+        FROM product
+        WHERE 1=1
+        <if test="keyword != null and keyword != ''">
+            AND product_name LIKE CONCAT('%', #{keyword}, '%')
+        </if>
+    </select>
+
+
+
+
+</mapper>

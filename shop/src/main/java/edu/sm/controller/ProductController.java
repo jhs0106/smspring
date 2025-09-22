@@ -87,17 +87,40 @@ public class ProductController {
         return "index";
     }
 
-    @RequestMapping("/getpage")
+//    @RequestMapping("/getpage")
+//
+//    public String getpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
+//        PageInfo<Product> p = null;
+//        try {
+//            p = new PageInfo<>(productService.getPage(pageNo), 5); // 5:하단 네비게이션 개수
+//        } catch (Exception e) {
+//            throw new Exception("시스템 장애: ER0001");
+//        }
+//        model.addAttribute("target", "/product");
+//        model.addAttribute("plist",p);
+//        model.addAttribute("left",dir+"left");
+//        model.addAttribute("center",dir+"getpage");
+//        return "index";
+//
+//    }
 
-    public String getpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model) throws Exception {
+    @RequestMapping("/searchpage")
+
+    public String searchpage(@RequestParam(value="pageNo", defaultValue = "1") int pageNo, Model model,
+                             ProductSearch productSearch) throws Exception {
         PageInfo<Product> p = null;
         try {
-            p = new PageInfo<>(productService.getPage(pageNo), 5); // 5:하단 네비게이션 개수
+            p = new PageInfo<>(productService.productgetpageSearch(pageNo, productSearch), 5); // 5:하단 네비게이션 개수
         } catch (Exception e) {
             throw new Exception("시스템 장애: ER0001");
         }
+        model.addAttribute("productName", productSearch.getProductName());
+        model.addAttribute("minPrice", productSearch.getMinPrice());
+        model.addAttribute("maxPrice", productSearch.getMaxPrice());
+        model.addAttribute("cateId", productSearch.getCateId());
+
         model.addAttribute("target", "/product");
-        model.addAttribute("plist",p);
+        model.addAttribute("ppage",p);
         model.addAttribute("left",dir+"left");
         model.addAttribute("center",dir+"getpage");
         return "index";

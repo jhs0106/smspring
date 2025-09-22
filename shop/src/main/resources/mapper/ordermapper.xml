@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.sm.app.repository.OrderRepository">
+
+    <!-- INSERT -->
+    <insert id="insert" parameterType="Order">
+        INSERT INTO orders (product_id, cate_id, order_date, order_qt)
+        VALUES (#{productId}, #{cateId}, #{orderDate}, #{orderQt})
+    </insert>
+
+    <!-- UPDATE -->
+    <update id="update" parameterType="Order">
+        UPDATE orders SET
+                          product_id = #{productId},
+                          cate_id = #{cateId},
+                          order_date = #{orderDate},
+                          order_qt = #{orderQt}
+        WHERE order_id = #{orderId}
+    </update>
+
+    <!-- DELETE -->
+    <delete id="delete" parameterType="int">
+        DELETE FROM orders WHERE order_id = #{orderId}
+    </delete>
+
+    <!-- SELECT ALL -->
+    <select id="selectAll" resultType="Order">
+        SELECT *
+        FROM orders
+    </select>
+
+    <!-- SELECT BY ID -->
+    <select id="select" parameterType="int" resultType="Order">
+        SELECT *
+        FROM orders
+        WHERE order_id = #{orderId}
+    </select>
+
+    <!-- Chart3용 쿼리 - 월별 매출 합계 -->
+    <select id="getMonthlySalesSum" resultType="map">
+        SELECT
+            MONTHNAME(o.order_date) as month_name,
+            MONTH(o.order_date) as month_num,
+            SUM(o.order_qt * p.product_price) as total_sales
+        FROM orders o
+            INNER JOIN product p ON o.product_id = p.product_id
+        WHERE YEAR(o.order_date) = YEAR(CURDATE())
+        GROUP BY YEAR(o.order_date), MONTH(o.order_date), MONTHNAME(o.order_date)
+        ORDER BY MONTH(o.order_date)
+    </select>
+
+    <!-- Chart3용 쿼리 - 월별 매출 평균 -->
+    <select id="getMonthlySalesAvg" resultType="map">
+        SELECT
+            MONTHNAME(o.order_date) as month_name,
+            MONTH(o.order_date) as month_num,
+            ROUND(AVG(o.order_qt * p.product_price), 0) as avg_sales
+        FROM orders o
+            INNER JOIN product p ON o.product_id = p.product_id
+        WHERE YEAR(o.order_date) = YEAR(CURDATE())
+        GROUP BY YEAR(o.order_date), MONTH(o.order_date), MONTHNAME(o.order_date)
+        ORDER BY MONTH(o.order_date)
+    </select>
+
+    <!-- 카테고리별 월 매출 합계 -->
+    <select id="getCategoryMonthlySalesSum" resultType="map">
+        SELECT
+            c.cate_name,
+            MONTHNAME(o.order_date) as month_name,
+            MONTH(o.order_date) as month_num,
+            SUM(o.order_qt * p.product_price) as total_sales
+        FROM orders o
+            INNER JOIN product p ON o.product_id = p.product_id
+            INNER JOIN cate c ON p.cate_id = c.cate_id
+        WHERE YEAR(o.order_date) = YEAR(CURDATE())
+        GROUP BY c.cate_id, c.cate_name, YEAR(o.order_date), MONTH(o.order_date), MONTHNAME(o.order_date)
+        ORDER BY c.cate_name, MONTH(o.order_date)
+    </select>
+
+    <!-- 카테고리별 월 매출 평균 -->
+    <select id="getCategoryMonthlySalesAvg" resultType="map">
+        SELECT
+            c.cate_name,
+            MONTHNAME(o.order_date) as month_name,
+            MONTH(o.order_date) as month_num,
+            ROUND(AVG(o.order_qt * p.product_price), 0) as avg_sales
+        FROM orders o
+            INNER JOIN product p ON o.product_id = p.product_id
+            INNER JOIN cate c ON p.cate_id = c.cate_id
+        WHERE YEAR(o.order_date) = YEAR(CURDATE())
+        GROUP BY c.cate_id, c.cate_name, YEAR(o.order_date), MONTH(o.order_date), MONTHNAME(o.order_date)
+        ORDER BY c.cate_name, MONTH(o.order_date)
+    </select>
+
+</mapper>
