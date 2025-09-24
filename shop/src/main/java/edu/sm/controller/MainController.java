@@ -16,7 +16,7 @@ public class MainController {
     public String main(Model model) {
         Random random = new Random();
 
-        log.info(""+(random.nextInt(100)+1));
+//        log.info(""+(random.nextInt(100)+1));
 
         // Database 데이터를 가지고 온다.
         return "index";

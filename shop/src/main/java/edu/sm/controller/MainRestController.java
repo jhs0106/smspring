@@ -38,6 +38,12 @@ public class MainRestController {
         return result;
     }
 
+    @RequestMapping("/savedata")
+    public Object savedata(@RequestParam("data") String data) throws IOException {
+       log.info(data);
+       return "OK";
+    }
+
     @RequestMapping("/saveaudio")
     public Object savewaudio(@RequestParam("file") MultipartFile file) throws IOException {
         FileUploadUtil.saveFile(file, "C:/smspring/audios/");
