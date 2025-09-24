@@ -133,16 +133,16 @@
     <logger name="edu.sm.controller.MainRestController" level="INFO">
         <appender-ref ref="FILE2" />
     </logger>
-    <logger name="edu.sm.controller.MainRestController1" level="INFO">
+    <logger name="edu.sm.app.service.LoggerService1" level="INFO">
         <appender-ref ref="FILE3" />
     </logger>
-    <logger name="edu.sm.controller.MainRestController2" level="INFO">
+    <logger name="edu.sm.app.service.LoggerService2" level="INFO">
         <appender-ref ref="FILE4" />
     </logger>
-    <logger name="edu.sm.controller.MainRestController3" level="INFO">
+    <logger name="edu.sm.app.service.LoggerService3" level="INFO">
         <appender-ref ref="FILE5" />
     </logger>
-    <logger name="edu.sm.controller.MainRestController4" level="INFO">
+    <logger name="edu.sm.app.service.LoggerService4" level="INFO">
         <appender-ref ref="FILE6" />
     </logger>
     <logger name="edu.sm.controller.LoginController" level="INFO">

@@ -28,15 +28,12 @@ public class SseEmitters {
             }
         });
     }
-    public void count() {
-        Random random = new Random();
-
-        long count = random.nextInt(1000)+1;
+    public void count(int num) {
         emitters.values().forEach(emitter -> {
             try {
                 emitter.send(SseEmitter.event()
                         .name("count")
-                        .data(count));
+                        .data(num));
             } catch ( IOException e) {
                 throw new RuntimeException(e);
             }
