@@ -41,8 +41,6 @@ public class SSEScheduler {
         Random r = new Random();
         int count = r.nextInt(1000)+1;
         sseEmitters.count(count);
-        //sseEmitters.count();
-//        simpMessageSendingOperations.convertAndSend("/send2",adminMsg);
     }
 
 }
