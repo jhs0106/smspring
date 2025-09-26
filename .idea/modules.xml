@@ -4,11 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/admin.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/admin.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/iot2/iot2.iml" filepath="$PROJECT_DIR$/iot2/iot2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/map.main.iml" filepath="$PROJECT_DIR$/.idea/modules/map.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/map.test.iml" filepath="$PROJECT_DIR$/.idea/modules/map.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/shop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/shop.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/shop.test.iml" filepath="$PROJECT_DIR$/.idea/modules/shop.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/smspring.iml" filepath="$PROJECT_DIR$/.idea/smspring.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/testmybatis.main.iml" filepath="$PROJECT_DIR$/.idea/modules/testmybatis.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/testmybatis.test.iml" filepath="$PROJECT_DIR$/.idea/modules/testmybatis.test.iml" />
     </modules>

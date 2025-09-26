@@ -6,23 +6,12 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.40/398c6d2d7c42c96b65e78d2ddc9be0058c163453/lombok-1.18.40.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
         </processorPath>
-        <module name="testmybatis.test" />
-        <module name="testmybatis.main" />
+        <module name="admin.test" />
+        <module name="admin.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="iot" target="17" />
-      <module name="iot.main" target="17" />
-      <module name="iot.test" target="17" />
-      <module name="iot2" target="17" />
-      <module name="iot2.main" target="17" />
-      <module name="iot2.test" target="17" />
-      <module name="mybatistest" target="17" />
-      <module name="mybatistest.main" target="17" />
-      <module name="mybatistest.test" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -32,9 +21,6 @@
       <module name="map" options="-parameters" />
       <module name="map.main" options="-parameters" />
       <module name="map.test" options="-parameters" />
-      <module name="mybatistest" options="-parameters" />
-      <module name="mybatistest.main" options="-parameters" />
-      <module name="mybatistest.test" options="-parameters" />
       <module name="shop" options="-parameters" />
       <module name="shop.main" options="-parameters" />
       <module name="shop.test" options="-parameters" />

@@ -26,6 +26,13 @@
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <script src="https://code.highcharts.com/modules/drilldown.js"></script>
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <%-- Web Socket Lib --%>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <%--tab --%>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body>
@@ -79,6 +86,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/chart"/>">Chart</a>
             </li>
+            <c:if test="${sessionScope.cust.custId != null}">
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/chat"/>">Chat</a>
+                </li>
+            </c:if>
         </ul>
     </div>
 </nav>
