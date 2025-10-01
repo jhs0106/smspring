@@ -48,7 +48,12 @@ public class SpringAI2Controller {
         model.addAttribute("left", dir+"left");
         return "index";
     }
-
+    @RequestMapping("/ai6")
+    public String ai6(Model model) {
+        model.addAttribute("center", dir+"ai6");
+        model.addAttribute("left", dir+"left");
+        return "index";
+    }
 
 
 }

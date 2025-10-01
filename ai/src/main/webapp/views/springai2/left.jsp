@@ -19,6 +19,9 @@
       <a class="nav-link" href="<c:url value="/springai2/ai5"/>">ai5</a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="<c:url value="/springai2/ai6"/>">ai6</a>
+    </li>
+    <li class="nav-item">
     </li>
   </ul>
   <hr class="d-sm-none">

@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/admin.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/admin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/admin.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ai.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ai.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ai.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ai.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/map.main.iml" filepath="$PROJECT_DIR$/.idea/modules/map.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/map.test.iml" filepath="$PROJECT_DIR$/.idea/modules/map.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/shop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/shop.main.iml" />

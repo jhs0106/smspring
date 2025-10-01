@@ -19,7 +19,7 @@ class AiServiceTests {
         String question = "천안에 있는 맛집을 알려줘";
         Flux<String> result = aiService.generateStreamText(question);
         result.collectList().block().stream().forEach(System.out::println);
-
+//        String result = aiService.generateText(question);
 //        log.info("result:{}", result);
     }
 
