@@ -4,7 +4,9 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/admin" />
     <file type="web" url="file://$PROJECT_DIR$/ai" />
+    <file type="web" url="file://$PROJECT_DIR$/map" />
     <file type="web" url="file://$PROJECT_DIR$/shop" />
+    <file type="web" url="file://$PROJECT_DIR$/testmybatis" />
   </component>
   <component name="ProjectRootManager">
     <output url="file://$PROJECT_DIR$/out" />

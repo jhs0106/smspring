@@ -1,6 +1,8 @@
 package edu.sm.controller;
 
 import edu.sm.app.dto.Hotel;
+import edu.sm.app.dto.Menu;
+import edu.sm.app.dto.MenuOrder;
 import edu.sm.app.dto.ReviewClassification;
 import edu.sm.app.springai.service2.*;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +25,7 @@ public class Ai2Controller {
     final private AiServiceMapOutputConverter aiServicemoc;
     final private AiServiceParameterizedTypeReference aiServiceptr;
     final private AiServiceSystemMessage aiServicesm;
+    final private AiServiceShop aiServiceShop;
 
 
 
@@ -55,5 +58,13 @@ public class Ai2Controller {
     public ReviewClassification beanOutputConverter2(@RequestParam("review") String review) {
         ReviewClassification reviewClassification = aiServicesm.classifyReview(review);
         return reviewClassification;
+    }
+
+    // Ai2Controller.java 내부에 아래 메소드만 남기거나 수정합니다.
+
+    // 단일 채팅 엔드포인트
+    @RequestMapping("/shop-chat")
+    public MenuOrder shopChat(@RequestParam("request") String request) throws Exception {
+        return aiServiceShop.processRequest(request);
     }
 }
