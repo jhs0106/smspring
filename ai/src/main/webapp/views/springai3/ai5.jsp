@@ -5,7 +5,7 @@
 사용한 것: ai2(/ai3/stt, /ai3/chat-text), ai4(/ai3/image-generate), ai3(/ai3/image-analysis)
 동작: 음성으로 이미지 설명 → 이미지 생성 → 생성된 이미지를 자동 분석(설명 텍스트 스트리밍 표시) → 설명을 음성으로 재생
 !-->
-
+<script>window.VOICE_DISABLE = true;</script>
 <script>
   let ai5 = {
     init: function () {

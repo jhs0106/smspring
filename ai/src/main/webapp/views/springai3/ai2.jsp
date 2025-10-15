@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script>window.VOICE_DISABLE = true;</script>
 
 <script>
   let ai2 = {
@@ -21,7 +22,7 @@
               style="width: 30px; height: 30px;
               background: url('/image/speaker-yellow.png') no-repeat center center / contain;"></div>음성으로 질문하세요
             </div>
-    `;
+    `;``
       // 사용자가 음성을 입력할 차례임을 알려주는 UI 추가
       $('#result').prepend(qForm);
     },

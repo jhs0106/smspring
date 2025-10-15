@@ -34,7 +34,7 @@
     },
     playAudio:async function(response, audioPlayer){
       try {
-        // 스트리밍을 위한 미디어소스 생성과 audioPlaye 소스로 설정
+        // 스트리밍을 위한 미디어소스 생성과 audioPlayer 소스로 설정
         const mediaSource = new MediaSource();
         audioPlayer.src = URL.createObjectURL(mediaSource);
 
