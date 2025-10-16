@@ -28,7 +28,7 @@ public class SseEmitters {
             }
         });
     }
-    public void msg(String msg) {
+    public void msg(Object msg) {
         emitters.values().forEach(emitter -> {
             try {
                 emitter.send(SseEmitter.event()
@@ -39,6 +39,7 @@ public class SseEmitters {
             }
         });
     }
+
 
     public void count(int num) {
         emitters.values().forEach(emitter -> {
