@@ -28,6 +28,18 @@ public class SseEmitters {
             }
         });
     }
+    public void msg(String msg) {
+        emitters.values().forEach(emitter -> {
+            try {
+                emitter.send(SseEmitter.event()
+                        .name("msg")
+                        .data(msg));
+            } catch ( IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
+
     public void count(int num) {
         emitters.values().forEach(emitter -> {
             try {

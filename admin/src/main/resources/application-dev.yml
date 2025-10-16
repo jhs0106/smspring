@@ -16,6 +16,17 @@ spring:
     view:
       prefix: /views/
       suffix: .jsp
+  ai:
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+    openai:
+      api-key: ENC(+T9SWaH75QZqZr5jsSY/GPfYhyJSiku54nYHGBHzq2D8M6Ri7sq3QXgWNzqalZw1kxI4ewSWJ5sbOH0zCQt6418r05/ShuliVIYKCWLIZtjMAOwzahzqKH+vtkWOlu2v5C3XBYdZYl2/14oOWDyR6yjYFNOTyCBOpxAEphIYS2SVMLqr6rTbFFN1RpBFs4Iko7C3Lmx1PdzADzBqyCezj4u+2PCSYN4ChZKtLrY7QnI=)
+      chat:
+        options:
+          model: gpt-4o
+          temperature: 0.1
+          max-tokens: 1000
   datasource:
     #url: jdbc:mysql://127.0.0.1:3306/shopdb?serverTimezone=Asia/Seoul
 #    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
@@ -24,6 +35,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: ENC(AZD/oOYNtCPlDC68dabOeA==)
+
 
 mybatis:
   type-aliases-package: edu.sm.app.dto
@@ -39,7 +51,7 @@ logging:
 # @Value("${}")
 app:
   url:
-    sse: https://10.20.32.65:8444/ # admin
+    sse: https://10.20.34.95:8444/ # admin
     mainsse: https://10.20.32.65:8443/ #shop
     wsurl: https://10.20.32.65:8443/ #shop
     websocketurl: https://10.20.32.65:8443/ #shop

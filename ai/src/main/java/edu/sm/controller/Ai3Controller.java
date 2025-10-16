@@ -54,11 +54,11 @@ public class Ai3Controller {
     return bytes;
   }
 
-//  @RequestMapping(value = "/tts2")
-//  public Map<String, String> tts2(@RequestParam("text") String text) {
-//    Map<String, String> response = aisttService.tts2(text);
-//    return response;
-//  }
+  @RequestMapping(value = "/tts2")
+  public Map<String, String> tts2(@RequestParam("text") String text) {
+    Map<String, String> response = aisttService.tts2(text);
+    return response;
+  }
 
 
   @RequestMapping(value = "/chat-text")
