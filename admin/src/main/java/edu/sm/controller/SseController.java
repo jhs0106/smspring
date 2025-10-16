@@ -1,12 +1,15 @@
 package edu.sm.controller;
 
 import java.io.IOException;
+
+import edu.sm.app.springai.service3.AiImageService;
 import edu.sm.sse.SseEmitters;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 @RestController
@@ -15,6 +18,7 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 public class SseController {
 
     private final SseEmitters sseEmitters;
+    private final AiImageService aiImageService;
 
 
     @GetMapping(value = "/connect/{id}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
@@ -41,5 +45,30 @@ public class SseController {
     public void msg(@RequestParam("msg")String msg){
         log.info("msg:"+msg);
         sseEmitters.msg(msg);
+    }
+
+    @RequestMapping(value = "/aiimage", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<String> receiveImage(@RequestParam("image") MultipartFile image) throws IOException {
+        if (image == null || image.isEmpty()) {
+            log.warn("AI browser image received with no data.");
+            return ResponseEntity.badRequest().body("이미지가 비어 있습니다.");
+        }
+
+        String contentType = image.getContentType();
+        if (contentType == null || contentType.isBlank()) {
+            contentType = MediaType.IMAGE_PNG_VALUE;
+        }
+
+
+        byte[] bytes = image.getBytes();
+        log.info("AI browser image received: name={}, size={} bytes", image.getOriginalFilename(), bytes.length);
+
+        String prompt = "촬영된 이미지를 분석해서 어떤 상황인지 간단히 설명해줘.";
+        String analysis = aiImageService.imageAnalysis2(prompt, contentType, bytes);
+        log.info("LLM analysis completed: {}", analysis);
+
+        sseEmitters.msg(analysis);
+        return ResponseEntity.ok("이미지를 성공적으로 분석했습니다.");
+
     }
 }
